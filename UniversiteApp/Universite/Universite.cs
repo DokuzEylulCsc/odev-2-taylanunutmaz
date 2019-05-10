@@ -8,6 +8,12 @@ namespace UniversiteApp
 {
     class Universite
     {
+        public String UniversiteAdi { get; set; }
+        public List<Fakulte> fakulteler = new List<Fakulte>();
 
+        public Universite(string universiteAdi)
+        {
+            UniversiteAdi = universiteAdi;
+        }
     }
 }
