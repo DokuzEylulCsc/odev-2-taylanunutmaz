@@ -8,5 +8,11 @@ namespace UniversiteApp
 {
     class Lisans:Ogrenci
     {
+        public string ogrenimTuru = "Lisans";
+
+        public Lisans()
+        {
+
+        }
     }
 }

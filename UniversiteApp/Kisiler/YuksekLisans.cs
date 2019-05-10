@@ -8,5 +8,11 @@ namespace UniversiteApp
 {
     class YuksekLisans:Ogrenci
     {
+        public string ogrenimTuru = "YuksekLisans";
+
+        public YuksekLisans()
+        {
+
+        }
     }
 }

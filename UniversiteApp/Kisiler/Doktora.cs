@@ -8,5 +8,11 @@ namespace UniversiteApp
 {
     class Doktora:Ogrenci
     {
+        public string ogrenimTuru = "Doktora";
+
+        public Doktora()
+        {
+
+        }
     }
 }
