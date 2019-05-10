@@ -16,7 +16,14 @@ namespace UniversiteApp
 
         public Ogrenci()
         {
-            OgrenciKayit();
+            try
+            {
+                OgrenciKayit();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
         private void OgrenciKayit(int retryNumber = 0)
@@ -32,15 +39,13 @@ namespace UniversiteApp
             {
                 if (retryNumber < maxRetryNumber)
                 {
-                    Console.WriteLine("Bir şeyler yanlış gitti. Hata kodu 0xMicrosoft. " +
-                        "Lütfen kontrol edip tekrar deneyin.");
+                    Console.WriteLine("Bir şeyler yanlış gitti. Hata kodu 0xMicrosoftJokes. " +
+                        "Lütfen girdinizi kontrol edip tekrar deneyin.");
                     OgrenciKayit(retryNumber++);
                 }
                 else
                 {
-                    Console.WriteLine("Çok sayıda hatalı giriş yapıldıği için " +
-                        "kayıt işlemi sonlandırılıyor!");
-                    throw;
+                    throw new Exception("Çok sayıda hatalı giriş yapıldı.");
                 }
             }
 
@@ -53,15 +58,14 @@ namespace UniversiteApp
             {
                 if (retryNumber < maxRetryNumber)
                 {
-                    Console.WriteLine("Bir şeyler yanlış gitti. Hata kodu 0xMicrosoft. " +
-                        "Lütfen kontrol edip tekrar deneyin.");
+                    Console.WriteLine("Bir şeyler yanlış gitti. Hata kodu 0xMicrosoftJokes. " +
+                        "Lütfen girdinizi kontrol edip tekrar deneyin.");
                     OgrenciKayit(retryNumber++);
                 }
                 else
                 {
-                    Console.WriteLine("Çok sayıda hatalı giriş yapıldıği için " +
-                        "kayıt işlemi sonlandırılıyor!");
-                    throw;
+                    throw new Exception("Çok sayıda hatalı giriş yapıldı.");
+
                 }
             }
 
