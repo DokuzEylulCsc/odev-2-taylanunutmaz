@@ -43,18 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bolum.cs" />
-    <Compile Include="Ders.cs" />
-    <Compile Include="Doktora.cs" />
-    <Compile Include="Fakulte.cs" />
-    <Compile Include="Lisans.cs" />
-    <Compile Include="Ogrenci.cs" />
-    <Compile Include="OgretimElemani.cs" />
+    <Compile Include="Universite\Bolum.cs" />
+    <Compile Include="Universite\Ders.cs" />
+    <Compile Include="Kisiler\Doktora.cs" />
+    <Compile Include="Universite\Fakulte.cs" />
+    <Compile Include="Kisiler\Lisans.cs" />
+    <Compile Include="Kisiler\Ogrenci.cs" />
+    <Compile Include="Kisiler\OgretimElemani.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sube.cs" />
-    <Compile Include="Universite.cs" />
-    <Compile Include="YuksekLisans.cs" />
+    <Compile Include="Universite\Sube.cs" />
+    <Compile Include="Universite\Universite.cs" />
+    <Compile Include="Kisiler\YuksekLisans.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

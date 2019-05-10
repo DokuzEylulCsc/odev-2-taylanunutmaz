@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UniversiteApp
 {
-    class Fakulte:Universite
+    class Sube
     {
     }
 }

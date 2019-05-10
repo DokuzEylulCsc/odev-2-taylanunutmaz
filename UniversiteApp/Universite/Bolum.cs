@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UniversiteApp
 {
-    class Ders:Bolum
+    class Bolum
     {
     }
 }
