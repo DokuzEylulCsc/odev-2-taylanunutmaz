@@ -9,10 +9,16 @@ namespace UniversiteApp
     class Bolum
     {
         public String BolumAdi { get; set; }
+        public Fakulte Fakulte;
         public List<Ders> dersler = new List<Ders>();
-        public Fakulte fakulte;
         //TODO ogretim elemanının Sube sınıfı ile ilişkisine bak
         public List<OgretimElemani> ogretimElemanlari = new List<OgretimElemani>();
+
+        public Bolum(string bolumAdi, Fakulte fakulte)
+        {
+            BolumAdi = bolumAdi;
+            Fakulte = fakulte;
+        }
 
         public void OgrenciKayit()
         {
