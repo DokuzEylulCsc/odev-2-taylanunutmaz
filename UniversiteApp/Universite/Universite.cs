@@ -15,5 +15,14 @@ namespace UniversiteApp
         {
             UniversiteAdi = universiteAdi;
         }
+
+        public void FakulteleriYazdir()
+        {
+            Console.WriteLine($"{UniversiteAdi} Universitesi'nin Fakulteleri:");
+            fakulteler.ForEach(x => {
+                Console.WriteLine(x.FakulteAdi);
+            });
+            Console.WriteLine("---SON---\n");
+        }
     }
 }

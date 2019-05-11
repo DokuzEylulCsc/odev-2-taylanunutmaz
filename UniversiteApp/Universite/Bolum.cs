@@ -18,6 +18,7 @@ namespace UniversiteApp
         {
             BolumAdi = bolumAdi;
             Fakulte = fakulte;
+            fakulte.bolumler.Add(this);
         }
 
         public void OgrenciKayit()
@@ -48,6 +49,16 @@ namespace UniversiteApp
         public void DersKapa()
         {
             //TODO Ders sınıfı ile ilişkilendir veya sadece List üzeründen müdahale et
+        }
+
+        public void DersleriYazdir()
+        {
+            Console.WriteLine($"{BolumAdi} Bölümü'nün Dersleri:");
+            dersler.ForEach(x => {
+                Console.WriteLine(x.DersAdi);
+            });
+            Console.WriteLine("---SON---\n");
+
         }
     }
 }

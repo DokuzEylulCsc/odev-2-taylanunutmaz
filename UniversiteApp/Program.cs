@@ -10,6 +10,19 @@ namespace UniversiteApp
     {
         static void Main(string[] args)
         {
+            Universite deu = new Universite("Dokuz Eylül");
+            Fakulte fen = new Fakulte("Fen", deu);
+            Bolum bil = new Bolum("Bilgisayar Bilimleri", fen);
+            Ders bil1001 = new Ders("Bilgisayar Bilimlerine Giris", 1, 1, bil);
+            Sube bil1001_a = new Sube("A", bil1001);
+
+            
+            fen.BolumleriYazdir();
+            bil1001.SubeleriYazdir();
+
+            Console.ReadKey();
         }
+
+        
     }
 }

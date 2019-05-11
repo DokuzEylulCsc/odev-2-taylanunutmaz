@@ -19,7 +19,8 @@ namespace UniversiteApp
             DersAdi = dersAdi;
             Yil = yil;
             Donem = donem;
-            this.Bolum = bolum;
+            Bolum = bolum;
+            bolum.dersler.Add(this);
         }
 
         public void OgretimElemaniAta()
@@ -45,6 +46,16 @@ namespace UniversiteApp
         public void DosyayaKaydet()
         {
             //TODO Ek olarak DosyadanOkuma methodunu da değerlendir
+        }
+
+        public void SubeleriYazdir()
+        {
+            Console.WriteLine($"{DersAdi} Dersi'nin Şubeleri:");
+            subeler.ForEach(x => {
+                Console.WriteLine(x.SubeAdi);
+            });
+            Console.WriteLine("---SON---\n");
+
         }
     }
 }

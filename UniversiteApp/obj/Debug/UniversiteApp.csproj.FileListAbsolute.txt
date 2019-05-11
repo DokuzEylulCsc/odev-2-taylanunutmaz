@@ -1,0 +1,7 @@
+C:\Users\Taylan\Documents\GitHub\odev-2-taylanunutmaz\UniversiteApp\bin\Debug\UniversiteApp.exe.config
+C:\Users\Taylan\Documents\GitHub\odev-2-taylanunutmaz\UniversiteApp\bin\Debug\UniversiteApp.exe
+C:\Users\Taylan\Documents\GitHub\odev-2-taylanunutmaz\UniversiteApp\bin\Debug\UniversiteApp.pdb
+C:\Users\Taylan\Documents\GitHub\odev-2-taylanunutmaz\UniversiteApp\obj\Debug\UniversiteApp.csprojAssemblyReference.cache
+C:\Users\Taylan\Documents\GitHub\odev-2-taylanunutmaz\UniversiteApp\obj\Debug\UniversiteApp.csproj.CoreCompileInputs.cache
+C:\Users\Taylan\Documents\GitHub\odev-2-taylanunutmaz\UniversiteApp\obj\Debug\UniversiteApp.exe
+C:\Users\Taylan\Documents\GitHub\odev-2-taylanunutmaz\UniversiteApp\obj\Debug\UniversiteApp.pdb
