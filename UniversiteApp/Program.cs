@@ -20,6 +20,10 @@ namespace UniversiteApp
             fen.BolumleriYazdir();
             bil1001.SubeleriYazdir();
 
+            Lisans taylan = new Lisans("Taylan", "Unutmaz", bil);
+
+            bil1001.OgrenciEkle(taylan);
+
             Console.ReadKey();
         }
 

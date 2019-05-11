@@ -33,9 +33,31 @@ namespace UniversiteApp
             //TODO
         }
 
-        public void OgrenciEkle()
+        public void OgrenciEkle(Ogrenci ogrenci)
         {
-            //TODO
+            //TODO maksimum kapasiteye ulaşma kontrolüne bak
+            if (ogrenci.Bolum == this.Bolum)
+            {
+                int minIndex = 0;
+                this.subeler.ForEach(x => {
+                    if (minIndex > x.ogrenciler.Count)
+                    {
+                        minIndex = subeler.IndexOf(x);
+                    }
+                });
+                this.subeler[minIndex].ogrenciler.Add(ogrenci);
+                ogrenci.dersler.Add(this);
+
+                Console.WriteLine($"{ogrenci.Ad} {ogrenci.Soyad} isimli öğrenci {DersAdi} isimli" +
+                    $"dersin {this.subeler[minIndex].SubeAdi} şubesine kaydoldu.");
+            }
+            else
+            {
+                Console.WriteLine($"Bu öğrenci faklı bölümden ders alamaz!. " +
+                    $"{ogrenci.Ad} {ogrenci.Soyad} isimli öğrencinin bölümü {ogrenci.Bolum.BolumAdi}" +
+                    $"fakat kayıt edilmek istenen ders {this.Bolum.BolumAdi} bölümünde.");
+            }
+            
         }
 
         public void OgrenciSil()

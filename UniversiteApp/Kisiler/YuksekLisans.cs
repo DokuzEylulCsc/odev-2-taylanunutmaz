@@ -10,7 +10,7 @@ namespace UniversiteApp
     {
         public string ogrenimTuru = "YuksekLisans";
 
-        public YuksekLisans()
+        public YuksekLisans(string ad, string soyad, Bolum bolum):base(ad, soyad, bolum)
         {
 
         }

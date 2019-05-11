@@ -10,7 +10,7 @@ namespace UniversiteApp
     {
         public string ogrenimTuru = "Doktora";
 
-        public Doktora()
+        public Doktora(string ad, string soyad, Bolum bolum) :base(ad, soyad, bolum)
         {
 
         }

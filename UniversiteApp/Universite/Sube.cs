@@ -10,7 +10,7 @@ namespace UniversiteApp
     {
         public String SubeAdi { get; set; }
         public Ders Ders { get; set; }
-        List<Ogrenci> ogrenciler = new List<Ogrenci>(40); //bir şubede en fazla 40 öğrenci olabilir
+        public List<Ogrenci> ogrenciler = new List<Ogrenci>(40); //bir şubede en fazla 40 öğrenci olabilir
 
         public Sube(string subeAdi, Ders ders)
         {
