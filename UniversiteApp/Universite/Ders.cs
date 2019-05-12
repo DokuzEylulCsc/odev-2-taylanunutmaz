@@ -13,6 +13,7 @@ namespace UniversiteApp
         public int Donem { get; set; }
         public List<Sube> subeler = new List<Sube>();
         public Bolum Bolum { get; set; }
+        public List<OgretimElemani> ogretimElemanlari = new List<OgretimElemani>(3);// her ders için maksimum 3 öğretim elemanı
 
         public Ders(string dersAdi, int yil, int donem, Bolum bolum)
         {
@@ -23,14 +24,34 @@ namespace UniversiteApp
             bolum.dersler.Add(this);
         }
 
-        public void OgretimElemaniAta()
+        public void OgretimElemaniAta(OgretimElemani ogretimElemani)
         {
-            //TODO
+            if (ogretimElemanlari.Count <= ogretimElemanlari.Capacity)
+            {
+                ogretimElemanlari.Add(ogretimElemani);
+                Console.WriteLine($"{ogretimElemani.Ad} {ogretimElemani.Soyad} isimli" +
+                    $"öğretim elemanı {DersAdi} isimli derse eklendi.");
+            }
+            else
+            {
+                Console.WriteLine($"İşlem başarısız! Dersi verebilecek maksimum öğretim elamanı" +
+                    $"sayısı aşıldı.(Kapasite: {ogretimElemanlari.Capacity})");
+            }
         }
 
-        public void OgretimElemaniSil()
+        public void OgretimElemaniSil(OgretimElemani ogretimElemani)
         {
-            //TODO
+            if(ogretimElemanlari.Contains(ogretimElemani))
+            {
+                ogretimElemanlari.Remove(ogretimElemani);
+                Console.WriteLine($"{ogretimElemani.Ad} {ogretimElemani.Soyad} isimli " +
+                    $"öğretim elemanı {DersAdi} isimli dersten başarıyla silindi.");
+            }
+            else
+            {
+                Console.WriteLine($"İşlem başarısız! {ogretimElemani.Ad} {ogretimElemani.Soyad} " +
+                    $"isimli öğretim elemanı {DersAdi} isimli derse kayıtlı değil!");
+            }
         }
 
         public void OgrenciEkle(Ogrenci ogrenci)

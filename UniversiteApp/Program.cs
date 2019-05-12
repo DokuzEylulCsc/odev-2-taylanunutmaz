@@ -25,6 +25,13 @@ namespace UniversiteApp
             bil1001.OgrenciEkle(taylan);
             bil1001.OgrenciSil(taylan);
 
+            OgretimElemani ali = new OgretimElemani("Ali", "Can", bil, "Araştırma Görevlisi");
+            OgretimElemani ali2 = new OgretimElemani("Ali", "Can", bil, "Araştırma Görevlisi");
+
+            bil1001.OgretimElemaniAta(ali);
+            bil1001.OgretimElemaniAta(ali2);
+            bil1001.OgretimElemaniSil(ali2);
+
             Console.ReadKey();
         }
 

@@ -14,8 +14,19 @@ namespace UniversiteApp
         public int Numara { get; set; }
         public Bolum Bolum { get; set; }
 
-        public OgretimElemani()
+        public OgretimElemani(string ad, string soyad, Bolum bolum, String unvan)
         {
+            Ad = ad;
+            Soyad = soyad;
+            Bolum = bolum;
+            Unvan = unvan;
+
+            Random rd = new Random();
+            Numara = DateTime.Now.Year * 10000 + rd.Next(1000, 9999);
+
+            Console.WriteLine($"{Ad} {Soyad} adlı öğretim elemanı {Numara} numarasıyla başarıyla kaydedildi.");
+            /*
+             * Ogrenci.cs dekiyle benzer sebepten kaldırıdı.
             try
             {
                 OgretimElemaniKayıt();
@@ -24,9 +35,10 @@ namespace UniversiteApp
             {
                 Console.WriteLine(e.Message);
             }
-
+            */
         }
 
+        /*
         private void OgretimElemaniKayıt(int retryNumber = 0)
         {
             Console.WriteLine("Yeni Öğretim Elemanı Kaydı Oluşturuluyor.");
@@ -76,5 +88,6 @@ namespace UniversiteApp
 
             Console.WriteLine($"{Ad} {Soyad} adlı öğretim elemanı {Numara} numarasıyla başarıyla kaydedildi.");
         }
+        */
     }
 }
