@@ -60,9 +60,27 @@ namespace UniversiteApp
             
         }
 
-        public void OgrenciSil()
+        public void OgrenciSil(Ogrenci ogrenci)
         {
-            //TODO
+            Sube silinecekSube = null;
+            this.subeler.ForEach(x => {
+                if (x.ogrenciler.Contains(ogrenci))
+                {
+                    silinecekSube = x;
+                }
+            });
+            if (silinecekSube != null)
+            {
+                silinecekSube.ogrenciler.Remove(ogrenci);
+                Console.WriteLine($"{ogrenci.Ad} {ogrenci.Soyad} isimli öğrenci " +
+                    $"{silinecekSube.Ders.DersAdi} dersinin {silinecekSube.SubeAdi} " +
+                    $"şubesinden silindi silindi!");
+            }
+            else
+            {
+                Console.WriteLine($"{ogrenci.Ad} {ogrenci.Soyad} isimli öğrenci" +
+                    $"{this.DersAdi} isimli dersin herhangi bir şubesine kayıtlı değil!");
+            }
         }
 
         public void DosyayaKaydet()

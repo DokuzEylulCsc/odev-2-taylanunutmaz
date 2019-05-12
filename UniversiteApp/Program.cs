@@ -23,6 +23,7 @@ namespace UniversiteApp
             Lisans taylan = new Lisans("Taylan", "Unutmaz", bil);
 
             bil1001.OgrenciEkle(taylan);
+            bil1001.OgrenciSil(taylan);
 
             Console.ReadKey();
         }
