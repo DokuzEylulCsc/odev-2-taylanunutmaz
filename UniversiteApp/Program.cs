@@ -41,6 +41,7 @@ namespace UniversiteApp
 
             bil.OgrencileriYadir();
 
+
             Console.ReadKey();
         }
 

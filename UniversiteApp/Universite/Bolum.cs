@@ -39,14 +39,22 @@ namespace UniversiteApp
                 $"{BolumAdi} isimli bölümden başarıyla silindi.");
         }
 
-        public void OgretimElemaniAta()
+        public void OgretimElemaniAta(OgretimElemani ogretimElemani)
         {
-            //TODO OgretimElemani sınıfıyla ilişkilendir
+            //Bölümü değiştirilen veya daha önceden bölümü silinen öğretim elemanına 
+            //bölüm atamanak için kullanılacak method
+            ogretimElemani.Bolum = this;
+            ogretimElemanlari.Add(ogretimElemani);
+            Console.WriteLine($"{ogretimElemani.Ad} {ogretimElemani.Soyad} isimli öğretim elemanı " +
+                $"{BolumAdi} isimli bölüme atandı.");
         }
 
-        public void OgretimElemaniSil()
+        public void OgretimElemaniSil(OgretimElemani ogretimElemani)
         {
-            //TODO OgretimElemani sınfıyla ilişkilendir
+            ogretimElemani.Bolum = null;
+            ogretimElemanlari.Remove(ogretimElemani);
+            Console.WriteLine($"{ogretimElemani.Ad} {ogretimElemani.Soyad} isimli öğretim elemanı " +
+                $"{BolumAdi} isilmi bölümden başarıyla kaldırıldı.");
         }
 
         public void DersAc()

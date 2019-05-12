@@ -21,6 +21,8 @@ namespace UniversiteApp
             Bolum = bolum;
             Unvan = unvan;
 
+            Bolum.ogretimElemanlari.Add(this);
+
             Random rd = new Random();
             Numara = DateTime.Now.Year * 10000 + rd.Next(1000, 9999);
 
