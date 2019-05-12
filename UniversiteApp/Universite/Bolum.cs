@@ -10,8 +10,8 @@ namespace UniversiteApp
     {
         public String BolumAdi { get; set; }
         public Fakulte Fakulte;
+        public List<Ogrenci> ogrenciler = new List<Ogrenci>();
         public List<Ders> dersler = new List<Ders>();
-        //TODO ogretim elemanının Sube sınıfı ile ilişkisine bak
         public List<OgretimElemani> ogretimElemanlari = new List<OgretimElemani>();
 
         public Bolum(string bolumAdi, Fakulte fakulte)
@@ -21,14 +21,22 @@ namespace UniversiteApp
             fakulte.bolumler.Add(this);
         }
 
-        public void OgrenciKayit()
+        public void OgrenciKayit(Ogrenci ogrenci)
         {
-            //TODO Ogrenci ve Sube sınıfındaki kayıt methoduyla ve direk sınıfın kendisi ile ilişkilendir
+            //Bu method öğrencinin bölüm değiştirmesi yada bölümü silinen öğrencilerin 
+            //yeniden bir bölüme atanması için kullanılacaktır.
+            ogrenci.Bolum = this;
+            ogrenciler.Add(ogrenci);
+            Console.WriteLine($"{ogrenci.Ad} {ogrenci.Soyad} isimli öğrenci " +
+                $"{BolumAdi} isimli bölüme başarıyla kaydedildi!");
         }
 
-        public void OgrenciSil()
+        public void OgrenciSil(Ogrenci ogrenci)
         {
-            //TODO Ogrenci Sube sınıfıyla ilişkilendir
+            ogrenci.Bolum = null;
+            ogrenciler.Remove(ogrenci);
+            Console.WriteLine($"{ogrenci.Ad} {ogrenci.Soyad} isimli öğrenci " +
+                $"{BolumAdi} isimli bölümden başarıyla silindi.");
         }
 
         public void OgretimElemaniAta()
@@ -58,7 +66,15 @@ namespace UniversiteApp
                 Console.WriteLine(x.DersAdi);
             });
             Console.WriteLine("---SON---\n");
+        }
 
+        public void OgrencileriYadir()
+        {
+            Console.WriteLine($"{BolumAdi} bölümünün öğrencileri:");
+            ogrenciler.ForEach(x => {
+                Console.WriteLine(x.Numara + " " + x.Ad + " " + x.Soyad);
+            });
+            Console.WriteLine("---SON---\n");
         }
     }
 }

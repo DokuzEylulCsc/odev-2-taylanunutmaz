@@ -19,6 +19,7 @@ namespace UniversiteApp
             Ad = ad;
             Soyad = soyad;
             Bolum = bolum;
+            Bolum.ogrenciler.Add(this);
             Random rd = new Random();
             Numara = DateTime.Now.Year * 1000000 + rd.Next(100000, 999999);
             /*

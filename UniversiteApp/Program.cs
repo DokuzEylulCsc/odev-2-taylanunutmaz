@@ -32,6 +32,15 @@ namespace UniversiteApp
             bil1001.OgretimElemaniAta(ali2);
             bil1001.OgretimElemaniSil(ali2);
 
+            Console.WriteLine(taylan.Bolum.BolumAdi);
+
+            bil.OgrenciSil(taylan);
+            bil.OgrenciKayit(taylan);
+
+            Console.WriteLine(taylan.Bolum.BolumAdi);
+
+            bil.OgrencileriYadir();
+
             Console.ReadKey();
         }
 
