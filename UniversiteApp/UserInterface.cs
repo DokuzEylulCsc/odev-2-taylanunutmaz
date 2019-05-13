@@ -247,6 +247,7 @@ namespace UniversiteApp
                     Console.WriteLine("1-)Ders Ekle");
                     Console.WriteLine("2-)Dersleri Listele");
                     Console.WriteLine("3-)Kayıtlı Şubeleri Listele");
+                    Console.WriteLine("4-)Derse Öğretim Elemanı Ata");
                     Console.Write("Seçim: ");
                     x = Convert.ToInt32(Console.ReadLine());
                     switch (x)
@@ -293,6 +294,26 @@ namespace UniversiteApp
                                 int z = Convert.ToInt32(Console.ReadLine());
                                 Ders secilenDers = der[z];
                                 secilenDers.SubeleriYazdir();
+                            }
+                            break;
+                        case 4:
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Öğretim elemanı atayabilmek için seçilebilecek dersler");
+                                int iter = 0;
+                                der.ForEach(y => {
+                                    Console.WriteLine((iter++) + "-)" + y.DersAdi);
+                                });
+                                Console.Write("Seçim");
+                                int z = Convert.ToInt32(Console.ReadLine());
+                                Ders secilenDers = der[z];
+                                iter = 0;
+                                ogrel.ForEach(y => {
+                                    Console.WriteLine((iter++) + "-)" + y.Numara + " " + y.Ad + " " + y.Soyad);
+                                });
+                                z = Convert.ToInt32(Console.ReadLine());
+                                OgretimElemani atanacakOgrel = ogrel[z];
+                                secilenDers.OgretimElemaniAta(atanacakOgrel);
                             }
                             break;
                     }
