@@ -93,7 +93,24 @@ namespace UniversiteApp
                 {
                     case 1:
                         {
-                            //TODO Ogrenci sınıfındaki yoruma alınan kayıt fonksiyonundan yaraklanarak düzenle
+                            Console.Clear();
+                            Console.WriteLine("Yeni Öğrenci Kaydı Oluşturuluyor.");
+                            Console.WriteLine("Öğrenci Adı:");
+                            string ad = Console.ReadLine().ToString();
+                            Console.WriteLine("Öğrenci Soyadı:");
+                            string soyad = Console.ReadLine().ToString();
+
+                            Console.WriteLine("Kayıt olunabilecek bölümler");
+                            bol.ForEach(y => {
+                                Console.WriteLine(y.BolumAdi);
+                            });
+                            Console.Write("Seçim: ");
+                            int z = Convert.ToInt32(Console.ReadLine());
+                            Bolum bolAdi = bol[z];
+                            Random rd = new Random();
+                            int numara = DateTime.Now.Year * 1000000 + rd.Next(100000, 999999);
+                            ogr.Add(new Lisans(ad, soyad, bolAdi));
+                            Console.WriteLine($"{ad} {soyad} adlı öğrenci {numara} numarasıyla başarıyla kaydedildi.");
                         } break;
                     case 2:
                         {
