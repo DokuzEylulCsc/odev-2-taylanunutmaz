@@ -83,12 +83,8 @@ namespace UniversiteApp
                             Console.Write("Seçim: ");
                             int z = Convert.ToInt32(Console.ReadLine());
                             Bolum bolAdi = bol[z];
-                            Random rd = new Random();
-                            int numara = DateTime.Now.Year * 10000 + rd.Next(1000, 9999);
 
                             ogrel.Add(new OgretimElemani(ad,soyad,bolAdi,unvan));
-
-                            Console.WriteLine($"{ad} {soyad} adlı öğretim elemanı {numara} numarasıyla başarıyla kaydedildi.");
                         }
                         break;
                     case 2:
@@ -139,10 +135,7 @@ namespace UniversiteApp
                             Console.Write("Seçim: ");
                             int z = Convert.ToInt32(Console.ReadLine());
                             Bolum bolAdi = bol[z];
-                            Random rd = new Random();
-                            int numara = DateTime.Now.Year * 1000000 + rd.Next(100000, 999999);
                             ogr.Add(new Lisans(ad, soyad, bolAdi));
-                            Console.WriteLine($"{ad} {soyad} adlı öğrenci {numara} numarasıyla başarıyla kaydedildi.");
                         } break;
                     case 3:
                         {
@@ -160,10 +153,7 @@ namespace UniversiteApp
                             Console.Write("Seçim: ");
                             int z = Convert.ToInt32(Console.ReadLine());
                             Bolum bolAdi = bol[z];
-                            Random rd = new Random();
-                            int numara = DateTime.Now.Year * 1000000 + rd.Next(100000, 999999);
                             ogr.Add(new YuksekLisans(ad, soyad, bolAdi));
-                            Console.WriteLine($"{ad} {soyad} adlı öğrenci {numara} numarasıyla başarıyla kaydedildi.");
                         } break;
                     case 4:
                         {
@@ -181,10 +171,7 @@ namespace UniversiteApp
                             Console.Write("Seçim: ");
                             int z = Convert.ToInt32(Console.ReadLine());
                             Bolum bolAdi = bol[z];
-                            Random rd = new Random();
-                            int numara = DateTime.Now.Year * 1000000 + rd.Next(100000, 999999);
                             ogr.Add(new Doktora(ad, soyad, bolAdi));
-                            Console.WriteLine($"{ad} {soyad} adlı öğrenci {numara} numarasıyla başarıyla kaydedildi.");
                         } break;
                 }
             }

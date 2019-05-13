@@ -22,6 +22,8 @@ namespace UniversiteApp
             Bolum.ogrenciler.Add(this);
             Random rd = new Random();
             Numara = DateTime.Now.Year * 1000000 + rd.Next(100000, 999999);
+            Console.WriteLine($"{Ad} {Soyad} adlı öğrenci {Numara} numarasıyla başarıyla kaydedildi.");
+
             /*
              * buranın kaldırılma açıklaması için yoruma alınan OgrenciKayıt methoduna bak
             try
