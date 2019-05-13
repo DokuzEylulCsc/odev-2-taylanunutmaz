@@ -85,13 +85,24 @@ namespace UniversiteApp
             {
                 Console.Clear();
                 Console.WriteLine("Öğrenci İşlemleri");
-                Console.WriteLine("1-)Öğrenci Ekle");
-                Console.WriteLine("2-)Öğrencileri Listele");
+                Console.WriteLine("1-)Öğrencileri Listele");
+                Console.WriteLine("2-)Lisans Öğrencisi Ekle");
+                Console.WriteLine("3-)Yüksek Lisans Öğrencisi Ekle");
+                Console.WriteLine("4-)Doktora Öğrencisi Ekle");
                 Console.Write("Seçim: ");
                 x = Convert.ToInt32(Console.ReadLine());
                 switch (x)
                 {
                     case 1:
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Kayıtlı Öğrenci Sayısı: " + ogr.Count);
+                            ogr.ForEach(y => {
+                                Console.WriteLine($"{y.Numara} - {y.Ad} {y.Soyad}");
+                            });
+                        }
+                        break;
+                    case 2:
                         {
                             Console.Clear();
                             Console.WriteLine("Yeni Öğrenci Kaydı Oluşturuluyor.");
@@ -112,13 +123,47 @@ namespace UniversiteApp
                             ogr.Add(new Lisans(ad, soyad, bolAdi));
                             Console.WriteLine($"{ad} {soyad} adlı öğrenci {numara} numarasıyla başarıyla kaydedildi.");
                         } break;
-                    case 2:
+                    case 3:
                         {
                             Console.Clear();
-                            Console.WriteLine("Kayıtlı Öğrenci Sayısı: " + ogr.Count);
-                            ogr.ForEach(y => {
-                                Console.WriteLine($"{y.Numara} - {y.Ad} {y.Soyad}");
+                            Console.WriteLine("Yeni Öğrenci Kaydı Oluşturuluyor.");
+                            Console.WriteLine("Öğrenci Adı:");
+                            string ad = Console.ReadLine().ToString();
+                            Console.WriteLine("Öğrenci Soyadı:");
+                            string soyad = Console.ReadLine().ToString();
+                            Console.WriteLine("Kayıt olunabilecek bölümler");
+                            int iter = 0;
+                            bol.ForEach(y => {
+                                Console.WriteLine((iter++) + "-)" + y.BolumAdi);
                             });
+                            Console.Write("Seçim: ");
+                            int z = Convert.ToInt32(Console.ReadLine());
+                            Bolum bolAdi = bol[z];
+                            Random rd = new Random();
+                            int numara = DateTime.Now.Year * 1000000 + rd.Next(100000, 999999);
+                            ogr.Add(new YuksekLisans(ad, soyad, bolAdi));
+                            Console.WriteLine($"{ad} {soyad} adlı öğrenci {numara} numarasıyla başarıyla kaydedildi.");
+                        } break;
+                    case 4:
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Yeni Öğrenci Kaydı Oluşturuluyor.");
+                            Console.WriteLine("Öğrenci Adı:");
+                            string ad = Console.ReadLine().ToString();
+                            Console.WriteLine("Öğrenci Soyadı:");
+                            string soyad = Console.ReadLine().ToString();
+                            Console.WriteLine("Kayıt olunabilecek bölümler");
+                            int iter = 0;
+                            bol.ForEach(y => {
+                                Console.WriteLine((iter++) + "-)" + y.BolumAdi);
+                            });
+                            Console.Write("Seçim: ");
+                            int z = Convert.ToInt32(Console.ReadLine());
+                            Bolum bolAdi = bol[z];
+                            Random rd = new Random();
+                            int numara = DateTime.Now.Year * 1000000 + rd.Next(100000, 999999);
+                            ogr.Add(new Doktora(ad, soyad, bolAdi));
+                            Console.WriteLine($"{ad} {soyad} adlı öğrenci {numara} numarasıyla başarıyla kaydedildi.");
                         } break;
                 }
             }
@@ -131,6 +176,7 @@ namespace UniversiteApp
                     Console.WriteLine("Şube İşlemleri");
                     Console.WriteLine("1-)Şube Ekle");
                     Console.WriteLine("2-)Şubeleri Listele");
+                    Console.WriteLine("3-)Şubeye kayıtlı öğrencileri listele");
                     Console.Write("Seçim: ");
                     x = Convert.ToInt32(Console.ReadLine());
                     switch (x)
@@ -158,6 +204,21 @@ namespace UniversiteApp
                                 sub.ForEach(y => {
                                     Console.WriteLine(y.SubeAdi);
                                 });
+                            }
+                            break;
+                        case 3:
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Öğrencilerin listelenmesi için seçilebilecek şubeler");
+                                int iter = 0;
+                                sub.ForEach(y =>
+                                {
+                                    Console.WriteLine((iter++) + "-)" + y.SubeAdi);
+                                });
+                                Console.Write("Seçim");
+                                int z = Convert.ToInt32(Console.ReadLine());
+                                Sube secilenSube = sub[z];
+                                secilenSube.OgrencileriYazdir();
                             }
                             break;
                     }
