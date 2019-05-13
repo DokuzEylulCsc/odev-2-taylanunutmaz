@@ -15,12 +15,15 @@ namespace UniversiteApp
             List<Bolum> bol = new List<Bolum>();
             List<Ders> der = new List<Ders>();
             List<Sube> sub = new List<Sube>();
+            List<Ogrenci> ogr = new List<Ogrenci>();
+            List<OgretimElemani> ogrel = new List<OgretimElemani>();
 
             int tm = 0;
             int x = 1;
             while (x != 0)
             {
                 Menu(tm++);
+                Console.Write("Seçim: ");
                 x = Convert.ToInt32(Console.ReadLine());
                 switch (x)
                 {
@@ -40,7 +43,34 @@ namespace UniversiteApp
                     case 5:
                         SubIslemleri();
                         break;
+                    case 6:
+                        OgrIslemleri();
+                        break;
+                }
+            }
 
+            void OgrIslemleri()
+            {
+                Console.Clear();
+                Console.WriteLine("Öğrenci İşlemleri");
+                Console.WriteLine("1-)Öğrenci Ekle");
+                Console.WriteLine("2-)Öğrencileri Listele");
+                Console.Write("Seçim: ");
+                x = Convert.ToInt32(Console.ReadLine());
+                switch (x)
+                {
+                    case 1:
+                        {
+                            //TODO Ogrenci sınıfındaki yoruma alınan kayıt fonksiyonundan yaraklanarak düzenle
+                        } break;
+                    case 2:
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Kayıtlı Öğrenci Sayısı: " + ogr.Count);
+                            ogr.ForEach(y => {
+                                Console.WriteLine($"{y.Numara} - {y.Ad} {y.Soyad}");
+                            });
+                        } break;
                 }
             }
 
@@ -52,11 +82,13 @@ namespace UniversiteApp
                     Console.WriteLine("Şube İşlemleri");
                     Console.WriteLine("1-)Şube Ekle");
                     Console.WriteLine("2-)Şubeleri Listele");
+                    Console.Write("Seçim: ");
                     x = Convert.ToInt32(Console.ReadLine());
                     switch (x)
                     {
                         case 1:
                             {
+                                Console.Clear();
                                 Console.WriteLine("Şube Adı");
                                 string subeAdi = Console.ReadLine();
                                 Ders dersAdi;
@@ -94,6 +126,7 @@ namespace UniversiteApp
                     Console.WriteLine("Ders İşlemleri");
                     Console.WriteLine("1-)Ders Ekle");
                     Console.WriteLine("2-)Dersleri Listele");
+                    Console.Write("Seçim: ");
                     x = Convert.ToInt32(Console.ReadLine());
                     switch (x)
                     {
@@ -139,6 +172,7 @@ namespace UniversiteApp
                     Console.WriteLine("Bölüm İşlemleri");
                     Console.WriteLine("1-)Bölüm Ekle");
                     Console.WriteLine("2-)Bölümleri Listele");
+                    Console.Write("Seçim: ");
                     x = Convert.ToInt32(Console.ReadLine());
                     switch (x)
                     {
@@ -182,6 +216,7 @@ namespace UniversiteApp
                     Console.WriteLine("Fakülte İşlemleri");
                     Console.WriteLine("1-)Fakülte Ekle");
                     Console.WriteLine("2-)Fakülteleri Listele");
+                    Console.Write("Seçim: ");
                     x = Convert.ToInt32(Console.ReadLine());
                     switch (x)
                     {
@@ -225,6 +260,7 @@ namespace UniversiteApp
                 Console.WriteLine("Universite İşlemleri");
                 Console.WriteLine("1-)Unviersite Ekle");
                 Console.WriteLine("2-)Universiteleri Listele");
+                Console.Write("Seçim: ");
                 x = Convert.ToInt32(Console.ReadLine());
                 switch (x)
                 {
