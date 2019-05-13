@@ -27,7 +27,7 @@ namespace UniversiteApp
                 x = Convert.ToInt32(Console.ReadLine());
                 switch (x)
                 {
-                    case 0: break;
+                    case 9: break;
                     case 1:
                         UniIslemleri();
                         break;
@@ -62,10 +62,14 @@ namespace UniversiteApp
                 Console.WriteLine("Öğretim Elemanı İşlemleri");
                 Console.WriteLine("1-)Öğretim Elemanı Ekle");
                 Console.WriteLine("2-)Öğretim Elemanlarını Listele");
+                Console.WriteLine("0-)Onceki Menu");
                 Console.Write("Seçim: ");
                 x = Convert.ToInt32(Console.ReadLine());
+
+                
                 switch (x)
                 {
+                    case 0: Main(); break;
                     case 1:
                         {
                             Console.WriteLine("Yeni Öğretim Elemanı Kaydı Oluşturuluyor.");
@@ -106,10 +110,12 @@ namespace UniversiteApp
                 Console.WriteLine("2-)Lisans Öğrencisi Ekle");
                 Console.WriteLine("3-)Yüksek Lisans Öğrencisi Ekle");
                 Console.WriteLine("4-)Doktora Öğrencisi Ekle");
+                Console.WriteLine("0-)Onceki Menu");
                 Console.Write("Seçim: ");
                 x = Convert.ToInt32(Console.ReadLine());
                 switch (x)
                 {
+                    case 0: Main(); break;
                     case 1:
                         {
                             Console.Clear();
@@ -185,10 +191,12 @@ namespace UniversiteApp
                     Console.WriteLine("1-)Şube Ekle");
                     Console.WriteLine("2-)Şubeleri Listele");
                     Console.WriteLine("3-)Şubeye kayıtlı öğrencileri listele");
+                    Console.WriteLine("0-)Onceki Menu");
                     Console.Write("Seçim: ");
                     x = Convert.ToInt32(Console.ReadLine());
                     switch (x)
                     {
+                        case 0: Main(); break;
                         case 1:
                             {
                                 Console.Clear();
@@ -252,10 +260,12 @@ namespace UniversiteApp
                     Console.WriteLine("6-)Derse Öğrenci Ekle");
                     Console.WriteLine("7-)Dersten Öğrenci Sil");
                     Console.WriteLine("8-)Ders bilgilerini text dosyasına yazdır");
+                    Console.WriteLine("0-)Onceki Menu");
                     Console.Write("Seçim: ");
                     x = Convert.ToInt32(Console.ReadLine());
                     switch (x)
                     {
+                        case 0: Main(); break;
                         case 1:
                             {
                                 Console.Clear();
@@ -424,10 +434,12 @@ namespace UniversiteApp
                     Console.WriteLine("7-)Ders Ekle(Daha önceden kaldırılan dersler için)");
                     Console.WriteLine("8-)Ders Sil");
                     Console.WriteLine("9-)Dersleri Listele");
+                    Console.WriteLine("0-)Onceki Menu");
                     Console.Write("Seçim: ");
                     x = Convert.ToInt32(Console.ReadLine());
                     switch (x)
                     {
+                    case 0: Main(); break;
                         case 1:
                             {
                                 Console.Clear();
@@ -602,10 +614,12 @@ namespace UniversiteApp
                     Console.WriteLine("Fakülte İşlemleri");
                     Console.WriteLine("1-)Fakülte Ekle");
                     Console.WriteLine("2-)Fakülteleri Listele");
+                    Console.WriteLine("0-)Onceki Menu");
                     Console.Write("Seçim: ");
                     x = Convert.ToInt32(Console.ReadLine());
                     switch (x)
                     {
+                    case 0: Main(); break;
                         case 1:
                             {
                                 Console.Clear();
@@ -647,10 +661,12 @@ namespace UniversiteApp
                 Console.WriteLine("Universite İşlemleri");
                 Console.WriteLine("1-)Unviersite Ekle");
                 Console.WriteLine("2-)Universiteleri Listele");
+                Console.WriteLine("0-)Onceki Menu");
                 Console.Write("Seçim: ");
                 x = Convert.ToInt32(Console.ReadLine());
                 switch (x)
                 {
+                    case 0: Main(); break;
                     case 1:
                         {
                             Console.Clear();
@@ -690,8 +706,9 @@ namespace UniversiteApp
                 Console.WriteLine("\n6-)Öğrenci İşlemleri");
                 Console.WriteLine("7-)Öğretim Görevlisi İşlemleri");
 
-                Console.WriteLine("0-)Çıkış");
+                Console.WriteLine("9-)Çıkış");
             }
         }
+        
     }
 }
