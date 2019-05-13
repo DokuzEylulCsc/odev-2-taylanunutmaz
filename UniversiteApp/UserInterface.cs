@@ -46,6 +46,38 @@ namespace UniversiteApp
                     case 6:
                         OgrIslemleri();
                         break;
+                    case 7:
+                        OgrElIslemleri();
+                        break;
+                    default:
+                        Console.WriteLine("Hatalı Giriş!");
+                        break;
+                }
+            }
+
+            void OgrElIslemleri()
+            {
+                Console.Clear();
+                Console.WriteLine("Öğretim Elemanı İşlemleri");
+                Console.WriteLine("1-)Öğretim Elemanı Ekle");
+                Console.WriteLine("2-)Öğretim Elemanlarını Listele");
+                Console.Write("Seçim: ");
+                x = Convert.ToInt32(Console.ReadLine());
+                switch (x)
+                {
+                    case 1:
+                        {
+                            //TODO OgretimElemani sınıfındaki yoruma alınan kayıt fonksiyonundan yaraklanarak düzenle
+                        }
+                        break;
+                    case 2:
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Kayıtlı Öğretim Elemanı Sayısı: " + ogr.Count);
+                            ogrel.ForEach(y => {
+                                Console.WriteLine($"{y.Numara} - {y.Ad} {y.Soyad}");
+                            });
+                        } break;
                 }
             }
 
