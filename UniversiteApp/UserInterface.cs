@@ -251,6 +251,7 @@ namespace UniversiteApp
                     Console.WriteLine("5-)Dersten Öğretim Elemanı Sil");
                     Console.WriteLine("6-)Derse Öğrenci Ekle");
                     Console.WriteLine("7-)Dersten Öğrenci Sil");
+                    Console.WriteLine("8-)Ders bilgilerini text dosyasına yazdır");
                     Console.Write("Seçim: ");
                     x = Convert.ToInt32(Console.ReadLine());
                     switch (x)
@@ -383,6 +384,19 @@ namespace UniversiteApp
                                 z = Convert.ToInt32(Console.ReadLine());
                                 Ogrenci silinecekOgrenci = ogr[z];
                                 secilenDers.OgrenciSil(silinecekOgrenci);
+                            }
+                            break;
+                        case 8:
+                            {
+                                Console.WriteLine("Dosyaya kaydetme için seşilebilecek dersler");
+                                int iter = 0;
+                                der.ForEach(y => {
+                                    Console.WriteLine((iter++) + "-)" + y.DersAdi);
+                                });
+                                Console.Write("Seçim");
+                                int z = Convert.ToInt32(Console.ReadLine());
+                                Ders secilenDers = der[z];
+                                secilenDers.DosyayaKaydet();
                             }
                             break;
                     }
