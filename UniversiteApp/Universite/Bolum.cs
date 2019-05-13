@@ -92,14 +92,34 @@ namespace UniversiteApp
             }
         }
 
-        public void DersAc()
+        public void DersAc(Ders ders)
         {
-            //TODO Ders sınıfı ile ilişkilendir
+            if (!dersler.Contains(ders) && ders.Bolum == null)
+            {
+                this.dersler.Add(ders);
+                ders.Bolum = this;
+                Console.WriteLine($"{ders} isimli ders {this.BolumAdi} isimli bölüme eklendi.");
+            }
+            else
+            {
+                Console.WriteLine($"{ders} isimli ders {ders.Bolum} isimli bölüme sahip olduğundan eklenemedi.");
+
+            }
         }
 
-        public void DersKapa()
+        public void DersKapa(Ders ders)
         {
-            //TODO Ders sınıfı ile ilişkilendir veya sadece List üzeründen müdahale et
+            if (dersler.Contains(ders))
+            {
+                dersler.Remove(ders);
+                ders.Bolum = null;
+                Console.WriteLine($"{ders} isimli ders {this.BolumAdi} isilmi bölümden silindi.");
+
+            }
+            else
+            {
+                Console.WriteLine($"{ders} isimli ders {this.BolumAdi} isilmi bölümde mevcut değil.");
+            }
         }
 
         public void DersleriYazdir()
