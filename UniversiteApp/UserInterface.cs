@@ -99,10 +99,10 @@ namespace UniversiteApp
                             string ad = Console.ReadLine().ToString();
                             Console.WriteLine("Öğrenci Soyadı:");
                             string soyad = Console.ReadLine().ToString();
-
                             Console.WriteLine("Kayıt olunabilecek bölümler");
+                            int iter = 0;
                             bol.ForEach(y => {
-                                Console.WriteLine(y.BolumAdi);
+                                Console.WriteLine((iter++) + "-)" + y.BolumAdi);
                             });
                             Console.Write("Seçim: ");
                             int z = Convert.ToInt32(Console.ReadLine());
@@ -140,12 +140,14 @@ namespace UniversiteApp
                                 Console.Clear();
                                 Console.WriteLine("Şube Adı");
                                 string subeAdi = Console.ReadLine();
-                                Ders dersAdi;
+                                Console.WriteLine("Seçilebilecek dersler");
+                                int iter = 0;
                                 der.ForEach(w => {
-                                    Console.WriteLine(w.DersAdi);
+                                    Console.WriteLine((iter++) + "-)" + w.DersAdi);
                                 });
+                                Console.Write("Seçim: ");
                                 int t = Convert.ToInt32(Console.ReadLine());
-                                dersAdi = der[t];
+                                Ders dersAdi = der[t];
                                 sub.Add(new Sube(subeAdi, dersAdi));
                             }
                             break;
@@ -181,16 +183,21 @@ namespace UniversiteApp
                     {
                         case 1:
                             {
+                                Console.Clear();
                                 Console.WriteLine("Ders Adı");
                                 string dersAdi = Console.ReadLine().ToString();
+                                Console.Write("Öğretim Yılı: ");
                                 int yil = Convert.ToInt32(Console.ReadLine());
+                                Console.Write("Öğretim Dönemi: ");
                                 int donem = Convert.ToInt32(Console.ReadLine());
-                                Bolum bolAdi;
+                                Console.WriteLine("Seçilebilecek bölümler");
+                                int iter = 0;
                                 bol.ForEach(w => {
-                                    Console.WriteLine(w.BolumAdi);
+                                    Console.WriteLine((iter++) + "-)" + w.BolumAdi);
                                 });
+                                Console.Write("Seçim: ");
                                 int t = Convert.ToInt32(Console.ReadLine());
-                                bolAdi = bol[t];
+                                Bolum bolAdi = bol[t];
                                 der.Add(new Ders(dersAdi, yil, donem, bolAdi));
                             }
                             break;
@@ -227,14 +234,17 @@ namespace UniversiteApp
                     {
                         case 1:
                             {
+                                Console.Clear();
                                 Console.WriteLine("Bölüm Adı");
                                 string bolumAdi = Console.ReadLine().ToString();
-                                Fakulte fakAdi;
+                                Console.WriteLine("Seçilebilecek fakülteler");
+                                int iter = 0;
                                 fak.ForEach(w => {
-                                    Console.WriteLine(w.FakulteAdi);
+                                    Console.WriteLine((iter++) + "-)" + w.FakulteAdi);
                                 });
+                                Console.Write("Seçim: ");
                                 int t = Convert.ToInt32(Console.ReadLine());
-                                fakAdi = fak[t];
+                                Fakulte fakAdi = fak[t];
                                 bol.Add(new Bolum(bolumAdi, fakAdi));
                             }
                             break;
@@ -274,13 +284,14 @@ namespace UniversiteApp
                                 Console.Clear();
                                 Console.WriteLine("FakulteAdı:");
                                 string fakAdi = Console.ReadLine();
-                                Universite uniAdi;
-                                uni.ForEach(z =>
-                                {
-                                    Console.WriteLine(z.UniversiteAdi);
+                                Console.WriteLine("Seçilebilecek Ünviersiteler");
+                                int iter = 0;
+                                uni.ForEach(z => {
+                                    Console.WriteLine((iter++) + "-)" + z.UniversiteAdi);
                                 });
+                                Console.Write("Seçim: ");
                                 int y = Convert.ToInt32(Console.ReadLine());
-                                uniAdi = uni[y];
+                                Universite uniAdi = uni[y];
                                 fak.Add(new Fakulte(fakAdi, uniAdi));
                             }
                             break;
