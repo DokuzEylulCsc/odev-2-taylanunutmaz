@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace UniversiteApp
@@ -30,7 +31,7 @@ namespace UniversiteApp
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine("Hatali giriş");
+                    Console.WriteLine("Hatali giriş"); Thread.Sleep(2000);
                     Main();
                 }
 
@@ -80,6 +81,7 @@ namespace UniversiteApp
                 catch (Exception)
                 {
                     Console.WriteLine("Hatali giriş");
+                    Thread.Sleep(2000);
                     Main();
                 }
 
@@ -135,7 +137,7 @@ namespace UniversiteApp
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine("Hatali giriş");
+                    Console.WriteLine("Hatali giriş"); Thread.Sleep(2000);
                     Main();
                 }
                 switch (x)
@@ -224,7 +226,7 @@ namespace UniversiteApp
                     }
                     catch (Exception)
                     {
-                        Console.WriteLine("Hatali giriş");
+                        Console.WriteLine("Hatali giriş"); Thread.Sleep(2000);
                         Main();
                     }
                     switch (x)
@@ -301,7 +303,7 @@ namespace UniversiteApp
                     }
                     catch (Exception)
                     {
-                        Console.WriteLine("Hatali giriş");
+                        Console.WriteLine("Hatali giriş"); Thread.Sleep(2000);
                         Main();
                     }
                     switch (x)
@@ -483,7 +485,7 @@ namespace UniversiteApp
                     }
                     catch (Exception)
                     {
-                        Console.WriteLine("Hatali giriş");
+                        Console.WriteLine("Hatali giriş"); Thread.Sleep(2000);
                         Main();
                     }
                     switch (x)
@@ -671,7 +673,7 @@ namespace UniversiteApp
                     }
                     catch (Exception)
                     {
-                        Console.WriteLine("Hatali giriş");
+                        Console.WriteLine("Hatali giriş"); Thread.Sleep(2000);
                         Main();
                     }
                     switch (x)
@@ -726,7 +728,7 @@ namespace UniversiteApp
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine("Hatali giriş");
+                    Console.WriteLine("Hatali giriş"); Thread.Sleep(2000);
                     Main();
                 }
                 switch (x)
