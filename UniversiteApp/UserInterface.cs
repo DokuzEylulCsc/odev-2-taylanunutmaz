@@ -24,10 +24,18 @@ namespace UniversiteApp
             {
                 Menu(tm++);
                 Console.Write("Seçim: ");
-                x = Convert.ToInt32(Console.ReadLine());
+                try
+                {
+                    x = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Hatali giriş");
+                    Main();
+                }
+
                 switch (x)
                 {
-                    case 9: break;
                     case 1:
                         UniIslemleri();
                         break;
@@ -49,6 +57,7 @@ namespace UniversiteApp
                     case 7:
                         OgrElIslemleri();
                         break;
+                    case 0: break; break;
                     //TODO dosyaya kaydet ve oku ekle
                     default:
                         Console.WriteLine("Hatalı Giriş!");
@@ -64,9 +73,17 @@ namespace UniversiteApp
                 Console.WriteLine("2-)Öğretim Elemanlarını Listele");
                 Console.WriteLine("0-)Onceki Menu");
                 Console.Write("Seçim: ");
-                x = Convert.ToInt32(Console.ReadLine());
+                try
+                {
+                    x = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Hatali giriş");
+                    Main();
+                }
 
-                
+
                 switch (x)
                 {
                     case 0: Main(); break;
@@ -112,7 +129,15 @@ namespace UniversiteApp
                 Console.WriteLine("4-)Doktora Öğrencisi Ekle");
                 Console.WriteLine("0-)Onceki Menu");
                 Console.Write("Seçim: ");
-                x = Convert.ToInt32(Console.ReadLine());
+                try
+                {
+                    x = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Hatali giriş");
+                    Main();
+                }
                 switch (x)
                 {
                     case 0: Main(); break;
@@ -193,7 +218,15 @@ namespace UniversiteApp
                     Console.WriteLine("3-)Şubeye kayıtlı öğrencileri listele");
                     Console.WriteLine("0-)Onceki Menu");
                     Console.Write("Seçim: ");
-                    x = Convert.ToInt32(Console.ReadLine());
+                    try
+                    {
+                        x = Convert.ToInt32(Console.ReadLine());
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("Hatali giriş");
+                        Main();
+                    }
                     switch (x)
                     {
                         case 0: Main(); break;
@@ -262,7 +295,15 @@ namespace UniversiteApp
                     Console.WriteLine("8-)Ders bilgilerini text dosyasına yazdır");
                     Console.WriteLine("0-)Onceki Menu");
                     Console.Write("Seçim: ");
-                    x = Convert.ToInt32(Console.ReadLine());
+                    try
+                    {
+                        x = Convert.ToInt32(Console.ReadLine());
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("Hatali giriş");
+                        Main();
+                    }
                     switch (x)
                     {
                         case 0: Main(); break;
@@ -436,7 +477,15 @@ namespace UniversiteApp
                     Console.WriteLine("9-)Dersleri Listele");
                     Console.WriteLine("0-)Onceki Menu");
                     Console.Write("Seçim: ");
-                    x = Convert.ToInt32(Console.ReadLine());
+                    try
+                    {
+                        x = Convert.ToInt32(Console.ReadLine());
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("Hatali giriş");
+                        Main();
+                    }
                     switch (x)
                     {
                     case 0: Main(); break;
@@ -616,7 +665,15 @@ namespace UniversiteApp
                     Console.WriteLine("2-)Fakülteleri Listele");
                     Console.WriteLine("0-)Onceki Menu");
                     Console.Write("Seçim: ");
-                    x = Convert.ToInt32(Console.ReadLine());
+                    try
+                    {
+                        x = Convert.ToInt32(Console.ReadLine());
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("Hatali giriş");
+                        Main();
+                    }
                     switch (x)
                     {
                     case 0: Main(); break;
@@ -663,7 +720,15 @@ namespace UniversiteApp
                 Console.WriteLine("2-)Universiteleri Listele");
                 Console.WriteLine("0-)Onceki Menu");
                 Console.Write("Seçim: ");
-                x = Convert.ToInt32(Console.ReadLine());
+                try
+                {
+                    x = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Hatali giriş");
+                    Main();
+                }
                 switch (x)
                 {
                     case 0: Main(); break;
@@ -706,9 +771,8 @@ namespace UniversiteApp
                 Console.WriteLine("\n6-)Öğrenci İşlemleri");
                 Console.WriteLine("7-)Öğretim Görevlisi İşlemleri");
 
-                Console.WriteLine("9-)Çıkış");
+                Console.WriteLine("0-)Çıkış");
             }
         }
-        
     }
 }
