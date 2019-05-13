@@ -55,6 +55,7 @@
     <Compile Include="Universite\Sube.cs" />
     <Compile Include="Universite\Universite.cs" />
     <Compile Include="Kisiler\YuksekLisans.cs" />
+    <Compile Include="UserInterface.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

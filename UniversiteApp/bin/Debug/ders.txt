@@ -1,0 +1,13 @@
+Bilgisayar Bilimlerine Giris
+1
+1
+subeler
+A
+subeler->ogrenciler
+2019687434 Taylan Unutmaz
+endof->subeler->ogrenciler
+endof->subeler
+Bilgisayar Bilimleri
+ogretimelemanlari
+20196873 Ali Can
+endof->ogretimelemanlari

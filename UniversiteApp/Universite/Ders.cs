@@ -124,6 +124,29 @@ namespace UniversiteApp
         public void DosyayaKaydet()
         {
             //TODO Ek olarak DosyadanOkuma methodunu da değerlendir
+            using (System.IO.StreamWriter file =
+            new System.IO.StreamWriter("ders.txt"))
+            {
+                file.WriteLine(DersAdi);
+                file.WriteLine(Yil.ToString());
+                file.WriteLine(Donem.ToString());
+                file.WriteLine("subeler");
+                subeler.ForEach(x => {
+                    file.WriteLine(x.SubeAdi);
+                    file.WriteLine("subeler->ogrenciler");
+                    x.ogrenciler.ForEach(y => {
+                        file.WriteLine($"{y.Numara} {y.Ad} {y.Soyad}");
+                    });
+                    file.WriteLine("endof->subeler->ogrenciler");
+                });
+                file.WriteLine("endof->subeler");
+                file.WriteLine(Bolum.BolumAdi);
+                file.WriteLine("ogretimelemanlari");
+                ogretimElemanlari.ForEach(x => {
+                    file.WriteLine($"{x.Numara} {x.Ad} {x.Soyad}");
+                });
+                file.WriteLine("endof->ogretimelemanlari");
+            }
         }
 
         public void SubeleriYazdir()

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UniversiteApp
 {
-    class Ogrenci
+    abstract class Ogrenci
     {
         public String Ad { get; set; }
         public String Soyad { get; set; }
