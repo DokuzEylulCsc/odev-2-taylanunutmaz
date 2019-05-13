@@ -421,6 +421,9 @@ namespace UniversiteApp
                     Console.WriteLine("4-)Öğrenci Sil");
                     Console.WriteLine("5-)Öğretim Elemanı Ekle");
                     Console.WriteLine("6-)Öğretim Elemanı Sil");
+                    Console.WriteLine("7-)Ders Ekle(Daha önceden kaldırılan dersler için)");
+                    Console.WriteLine("8-)Ders Sil");
+                    Console.WriteLine("9-)Dersleri Listele");
                     Console.Write("Seçim: ");
                     x = Convert.ToInt32(Console.ReadLine());
                     switch (x)
@@ -524,6 +527,61 @@ namespace UniversiteApp
                                 int p = Convert.ToInt32(Console.ReadLine());
                                 OgretimElemani secilenOgrel = ogrel[p];
                                 secilenBolum.OgretimElemaniSil(secilenOgrel);
+                            }
+                            break;
+                        case 7:
+                            {
+                                Console.WriteLine("Seçilebilecek Bölümler");
+                                int iter = 0;
+                                bol.ForEach(y => {
+                                    Console.WriteLine((iter++) + "-)" + y.BolumAdi);
+                                });
+                                int z = Convert.ToInt32(Console.ReadLine());
+                                Bolum secilenBolum = bol[z];
+                                Console.WriteLine("Seçilebilecek Dersler");
+                                iter = 0;
+                                der.ForEach(y => {
+                                    Console.WriteLine((iter++) + "-)" + y.DersAdi);
+                                });
+                                int p = Convert.ToInt32(Console.ReadLine());
+                                Ders secilenDers = der[p];
+                                secilenBolum.DersAc(secilenDers);
+                            }
+                            break;
+                        case 8:
+                            {
+                                Console.WriteLine("Seçilebilecek Bölümler");
+                                int iter = 0;
+                                bol.ForEach(y => {
+                                    Console.WriteLine((iter++) + "-)" + y.BolumAdi);
+                                });
+                                int z = Convert.ToInt32(Console.ReadLine());
+                                Bolum secilenBolum = bol[z];
+                                Console.WriteLine("Seçilebilecek Dersler");
+                                iter = 0;
+                                der.ForEach(y => {
+                                    Console.WriteLine((iter++) + "-)" + y.DersAdi);
+                                });
+                                int p = Convert.ToInt32(Console.ReadLine());
+                                Ders secilenDers = der[p];
+                                secilenBolum.DersKapa(secilenDers);
+                            }
+                            break;
+                        case 9:
+                            {
+                                Console.WriteLine("Seçilebilecek Bölümler");
+                                int iter = 0;
+                                bol.ForEach(y => {
+                                    Console.WriteLine((iter++) + "-)" + y.BolumAdi);
+                                });
+                                int z = Convert.ToInt32(Console.ReadLine());
+                                Bolum secilenBolum = bol[z];
+                                Console.Clear();
+                                Console.WriteLine(secilenBolum.BolumAdi + " isimli bölümün dersleri:");
+                                secilenBolum.dersler.ForEach(w =>
+                                {
+                                    Console.WriteLine(w.DersAdi);
+                                });
                             }
                             break;
                     }
