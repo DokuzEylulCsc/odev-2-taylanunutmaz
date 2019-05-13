@@ -49,6 +49,7 @@ namespace UniversiteApp
                     case 7:
                         OgrElIslemleri();
                         break;
+                    //TODO dosyaya kaydet ve oku ekle
                     default:
                         Console.WriteLine("Hatalı Giriş!");
                         break;
@@ -67,7 +68,27 @@ namespace UniversiteApp
                 {
                     case 1:
                         {
-                            //TODO OgretimElemani sınıfındaki yoruma alınan kayıt fonksiyonundan yaraklanarak düzenle
+                            Console.WriteLine("Yeni Öğretim Elemanı Kaydı Oluşturuluyor.");
+                            Console.WriteLine("Öğretim Elemanı Ünvanı:");
+                            string unvan = Console.ReadLine().ToString();
+                            Console.WriteLine("Öğretim Elemanı Adı:");
+                            string ad = Console.ReadLine().ToString();
+                            Console.WriteLine("Öğrenci Soyadı:");
+                            string soyad = Console.ReadLine().ToString();
+                            Console.WriteLine("Kayıt olunabilecek bölümler");
+                            int iter = 0;
+                            bol.ForEach(y => {
+                                Console.WriteLine((iter++) + "-)" + y.BolumAdi);
+                            });
+                            Console.Write("Seçim: ");
+                            int z = Convert.ToInt32(Console.ReadLine());
+                            Bolum bolAdi = bol[z];
+                            Random rd = new Random();
+                            int numara = DateTime.Now.Year * 10000 + rd.Next(1000, 9999);
+
+                            ogrel.Add(new OgretimElemani(ad,soyad,bolAdi,unvan));
+
+                            Console.WriteLine($"{ad} {soyad} adlı öğretim elemanı {numara} numarasıyla başarıyla kaydedildi.");
                         }
                         break;
                     case 2:
