@@ -12,10 +12,7 @@ namespace UniversiteApp
         static void Main(string[] args)
         {
             UserInterface asd = new UserInterface();
-
             asd.Main();
-
-            Console.ReadKey();
         }
 
         

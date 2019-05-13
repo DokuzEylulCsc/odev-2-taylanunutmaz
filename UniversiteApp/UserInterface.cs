@@ -44,145 +44,177 @@ namespace UniversiteApp
                 }
             }
 
-            void DerIslemleri()
-            {
-                Console.Clear();
-                Console.WriteLine("Ders İşlemleri");
-                Console.WriteLine("1-)Ders Ekle");
-                Console.WriteLine("2-)Dersleri Listele");
-                x = Convert.ToInt32(Console.ReadLine());
-                switch (x)
-                {
-                    case 1:
-                        {
-                            Console.WriteLine("Ders Adı");
-                            string dersAdi = Console.ReadLine().ToString();
-                            int yil = Convert.ToInt32(Console.ReadLine());
-                            int donem = Convert.ToInt32(Console.ReadLine());
-                            Bolum bolAdi;
-                            bol.ForEach(w => {
-                                Console.WriteLine(w.BolumAdi);
-                            });
-                            int t = Convert.ToInt32(Console.ReadLine());
-                            bolAdi = bol[t];
-                            der.Add(new Ders(dersAdi, yil, donem, bolAdi));
-                        }
-                        break;
-                    case 2:
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Kayıtlı Ders Sayısı: " + der.Count);
-                            der.ForEach(y => {
-                                Console.WriteLine(y.DersAdi);
-                            });
-                        }
-                        break;
-                }
-                
-            }
-
             void SubIslemleri()
             {
-                Console.Clear();
-                Console.WriteLine("Şube İşlemleri");
-                Console.WriteLine("1-)Şube Ekle");
-                Console.WriteLine("2-)Şubeleri Listele");
-                x = Convert.ToInt32(Console.ReadLine());
-                switch (x)
+                if (der.Count > 0)
                 {
-                    case 1:
-                        {
-                            Console.WriteLine("Şube Adı");
-                            string subeAdi = Console.ReadLine();
-                            Ders dersAdi;
-                            der.ForEach(w => {
-                                Console.WriteLine(w.DersAdi);
-                            });
-                            int t = Convert.ToInt32(Console.ReadLine());
-                            dersAdi = der[t];
-                            sub.Add(new Sube(subeAdi, dersAdi));
-                        }
-                        break;
-                    case 2:
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Kayıtlı Şube Sayısı: " + sub.Count);
-                            sub.ForEach(y => {
-                                Console.WriteLine(y.SubeAdi);
-                            });
-                        }
-                        break;
+                    Console.Clear();
+                    Console.WriteLine("Şube İşlemleri");
+                    Console.WriteLine("1-)Şube Ekle");
+                    Console.WriteLine("2-)Şubeleri Listele");
+                    x = Convert.ToInt32(Console.ReadLine());
+                    switch (x)
+                    {
+                        case 1:
+                            {
+                                Console.WriteLine("Şube Adı");
+                                string subeAdi = Console.ReadLine();
+                                Ders dersAdi;
+                                der.ForEach(w => {
+                                    Console.WriteLine(w.DersAdi);
+                                });
+                                int t = Convert.ToInt32(Console.ReadLine());
+                                dersAdi = der[t];
+                                sub.Add(new Sube(subeAdi, dersAdi));
+                            }
+                            break;
+                        case 2:
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Kayıtlı Şube Sayısı: " + sub.Count);
+                                sub.ForEach(y => {
+                                    Console.WriteLine(y.SubeAdi);
+                                });
+                            }
+                            break;
+                    }
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("Şube ekleyebilmek için önceden Ders eklenmiş olmalı!");
+                }
+            }
+
+            void DerIslemleri()
+            {
+                if (bol.Count > 0)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Ders İşlemleri");
+                    Console.WriteLine("1-)Ders Ekle");
+                    Console.WriteLine("2-)Dersleri Listele");
+                    x = Convert.ToInt32(Console.ReadLine());
+                    switch (x)
+                    {
+                        case 1:
+                            {
+                                Console.WriteLine("Ders Adı");
+                                string dersAdi = Console.ReadLine().ToString();
+                                int yil = Convert.ToInt32(Console.ReadLine());
+                                int donem = Convert.ToInt32(Console.ReadLine());
+                                Bolum bolAdi;
+                                bol.ForEach(w => {
+                                    Console.WriteLine(w.BolumAdi);
+                                });
+                                int t = Convert.ToInt32(Console.ReadLine());
+                                bolAdi = bol[t];
+                                der.Add(new Ders(dersAdi, yil, donem, bolAdi));
+                            }
+                            break;
+                        case 2:
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Kayıtlı Ders Sayısı: " + der.Count);
+                                der.ForEach(y => {
+                                    Console.WriteLine(y.DersAdi);
+                                });
+                            }
+                            break;
+                    }
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("Ders ekleyebilmek için önceden Bölüm eklenmiş olmalı!");
                 }
                 
             }
-
+            
             void BolIslemleri()
             {
-                Console.Clear();
-                Console.WriteLine("Bölüm İşlemleri");
-                Console.WriteLine("1-)Bölüm Ekle");
-                Console.WriteLine("2-)Bölümleri Listele");
-                x = Convert.ToInt32(Console.ReadLine());
-                switch (x)
+                if (fak.Count > 0)
                 {
-                    case 1:
-                        {
-                            Console.WriteLine("Bölüm Adı");
-                            string bolumAdi = Console.ReadLine().ToString();
-                            Fakulte fakAdi;
-                            fak.ForEach(w => {
-                                Console.WriteLine(w.FakulteAdi);
-                            });
-                            int t = Convert.ToInt32(Console.ReadLine());
-                            fakAdi = fak[t];
-                            bol.Add(new Bolum(bolumAdi, fakAdi));
-                        } break;
-                    case 2:
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Kayıtlı Bölüm Sayısı: " + bol.Count);
-                            bol.ForEach(y => {
-                                Console.WriteLine(y.BolumAdi);
-                            });
-                        }
-                        break;
+                    Console.Clear();
+                    Console.WriteLine("Bölüm İşlemleri");
+                    Console.WriteLine("1-)Bölüm Ekle");
+                    Console.WriteLine("2-)Bölümleri Listele");
+                    x = Convert.ToInt32(Console.ReadLine());
+                    switch (x)
+                    {
+                        case 1:
+                            {
+                                Console.WriteLine("Bölüm Adı");
+                                string bolumAdi = Console.ReadLine().ToString();
+                                Fakulte fakAdi;
+                                fak.ForEach(w => {
+                                    Console.WriteLine(w.FakulteAdi);
+                                });
+                                int t = Convert.ToInt32(Console.ReadLine());
+                                fakAdi = fak[t];
+                                bol.Add(new Bolum(bolumAdi, fakAdi));
+                            }
+                            break;
+                        case 2:
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Kayıtlı Bölüm Sayısı: " + bol.Count);
+                                bol.ForEach(y => {
+                                    Console.WriteLine(y.BolumAdi);
+                                });
+                            }
+                            break;
+                    }
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("Bölüm ekleyebilmek için önceden Fakülte eklenmiş olmalı!");
                 }
                 
             }
 
             void FakIslemleri()
             {
-                Console.Clear();
-                Console.WriteLine("Fakülte İşlemleri");
-                Console.WriteLine("1-)Fakülte Ekle");
-                Console.WriteLine("2-)Fakülteleri Listele");
-                x = Convert.ToInt32(Console.ReadLine());
-                switch (x)
+                if (uni.Count > 0)
                 {
-                    case 1:
-                        {
-                            Console.Clear();
-                            Console.WriteLine("FakulteAdı:");
-                            string fakAdi = Console.ReadLine();
-                            Universite uniAdi;
-                            uni.ForEach(z =>
+                    Console.Clear();
+                    Console.WriteLine("Fakülte İşlemleri");
+                    Console.WriteLine("1-)Fakülte Ekle");
+                    Console.WriteLine("2-)Fakülteleri Listele");
+                    x = Convert.ToInt32(Console.ReadLine());
+                    switch (x)
+                    {
+                        case 1:
                             {
-                                Console.WriteLine(z.UniversiteAdi);
-                            });
-                            int y = Convert.ToInt32(Console.ReadLine());
-                            uniAdi = uni[y];
-                            fak.Add(new Fakulte(fakAdi, uniAdi));
-                        }
-                        break;
-                    case 2:
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Kayıtlı Fakülte Sayısı: " + fak.Count);
-                            fak.ForEach(y => {
-                                Console.WriteLine(y.FakulteAdi);
-                            });
-                        }
-                        break;
+                                Console.Clear();
+                                Console.WriteLine("FakulteAdı:");
+                                string fakAdi = Console.ReadLine();
+                                Universite uniAdi;
+                                uni.ForEach(z =>
+                                {
+                                    Console.WriteLine(z.UniversiteAdi);
+                                });
+                                int y = Convert.ToInt32(Console.ReadLine());
+                                uniAdi = uni[y];
+                                fak.Add(new Fakulte(fakAdi, uniAdi));
+                            }
+                            break;
+                        case 2:
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Kayıtlı Fakülte Sayısı: " + fak.Count);
+                                fak.ForEach(y => {
+                                    Console.WriteLine(y.FakulteAdi);
+                                });
+                            }
+                            break;
+                    }
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("Fakülte ekleyebilmek için önceden Üniversite eklenmiş olmalı!");
                 }
 
             }
